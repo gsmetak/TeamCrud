@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { element } from 'prop-types'
 import ErrorPage from './ErrorPage'
 
 class ErrorBoundary extends React.Component {
@@ -20,12 +20,10 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <ErrorPage
-          location={{
-            state: {
-              message: this.state.error.message,
-              detail: this.state.error.detail,
-              componentStack: this.state.errorInfo.componentStack,
-            },
+          error={{
+            message: this.state.error.message,
+            detail: this.state.error.detail,
+            componentStack: this.state.errorInfo.componentStack,
           }}
         />
       )
@@ -36,7 +34,7 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = {
-  children: object,
+  children: element,
 }
 
 export default ErrorBoundary
