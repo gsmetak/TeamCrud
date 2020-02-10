@@ -24,19 +24,44 @@ const UserForm = (props) => {
     props.action(userInfo)
   }
 
+  const enterPressed = (event) => {
+    const code = event.keyCode || event.which
+    if (code === 13) {
+      handleAction()
+    }
+  }
+
   return (
     <form>
       <div className="form-group">
         <label>First Name:</label>
-        <StyledInput type="text" name="firstName" value={userInfo.firstName} onChange={handleInputChange} />
+        <StyledInput
+          type="text"
+          name="firstName"
+          value={userInfo.firstName}
+          onChange={handleInputChange}
+          onKeyPress={enterPressed}
+        />
       </div>
       <div className="form-group">
         <label>Last Name:</label>
-        <StyledInput type="text" name="lastName" value={userInfo.lastName} onChange={handleInputChange} />
+        <StyledInput
+          type="text"
+          name="lastName"
+          value={userInfo.lastName}
+          onChange={handleInputChange}
+          onKeyPress={enterPressed}
+        />
       </div>
       <div className="form-group">
         <label>Email:</label>
-        <StyledInput type="text" name="email" value={userInfo.email} onChange={handleInputChange} />
+        <StyledInput
+          type="text"
+          name="email"
+          value={userInfo.email}
+          onChange={handleInputChange}
+          onKeyPress={enterPressed}
+        />
       </div>
       <div className="form-group">
         <PrimaryButton type="button" onClick={handleAction}>
