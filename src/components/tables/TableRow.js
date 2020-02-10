@@ -17,7 +17,6 @@ const TableRow = (props) => {
   const [isClicked, setIsClicked] = useState(false)
   const [, setUserList] = useGlobal('userList')
 
-
   const deleteUser = () => {
     setIsClicked(true)
     setLoading(true)

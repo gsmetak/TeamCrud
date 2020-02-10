@@ -7,8 +7,9 @@ const ErrorPage = (props) => (
   <div>
     <ComponentHeader>{props.location.state?.message || 'Something went wrong.'}</ComponentHeader>
     {props.location.state?.detail && <p>{props.location.state.detail}</p>}
-    {props.location.state?.componentStack &&
-    <PreWrappedParagraph>{props.location.state?.componentStack}</PreWrappedParagraph>}
+    {props.location.state?.componentStack && (
+      <PreWrappedParagraph>{props.location.state?.componentStack}</PreWrappedParagraph>
+    )}
   </div>
 )
 

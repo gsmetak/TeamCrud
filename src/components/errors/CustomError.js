@@ -1,9 +1,9 @@
-class CustomError extends Error{
-  detail;
+class CustomError extends Error {
+  detail
 
   constructor(message, detail) {
-    super(message);
-    this.detail = detail;
+    super(message)
+    this.detail = detail
   }
 }
 

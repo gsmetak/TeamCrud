@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component {
             state: {
               message: this.state.error.message,
               detail: this.state.error.detail,
-              componentStack: this.state.errorInfo.componentStack
+              componentStack: this.state.errorInfo.componentStack,
             },
           }}
         />
