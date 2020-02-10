@@ -3,23 +3,17 @@ import send from '../../shared/helpers/api'
 
 const withUserDeletion = (ComponentWithDelete) => {
   withUserDeletion.displayName = `withUserDeletion(${ComponentWithDelete.name})`
-  return class extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {}
-    }
-
-    deleteUser(id) {
+  const WithUserDeletion = props => {
+    const deleteUser = id => {
       return send({
         method: 'DELETE',
         url: `/users/${id}`,
       })
     }
 
-    render() {
-      return <ComponentWithDelete deleteUser={this.deleteUser} {...this.props} />
-    }
+    return (<ComponentWithDelete deleteUser={deleteUser} {...props} />)
   }
+  return WithUserDeletion
 }
 
 export default withUserDeletion
