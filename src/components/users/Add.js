@@ -5,8 +5,7 @@ import UserForm from '../forms/UserForm'
 import send from '../../shared/helpers/api'
 
 const Add = (props) => {
-  // eslint-disable-next-line no-unused-vars
-  const [loading, setLoading] = useGlobal('loading')
+  const [, setLoading] = useGlobal('loading')
 
   const addUser = (user) => {
     setLoading(true)

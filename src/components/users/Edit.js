@@ -9,8 +9,8 @@ import withUserDeletion from '../hocs/withUserDeletion'
 
 const Edit = (props) => {
   const { id } = props.match.params
-  const [loading, setLoading] = useGlobal('loading')
-  const [userList, setUserList] = useGlobal('userList')
+  const [, setLoading] = useGlobal('loading')
+  const [, setUserList] = useGlobal('userList')
   const [userInfo, setUserInfo] = useState({ firstName: '', lastName: '', email: '' })
 
   useEffect(() => {
