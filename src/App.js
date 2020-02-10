@@ -14,7 +14,7 @@ import ErrorBoundary from './components/errors/ErrorBoundary'
 const App = () => (
   <ThemeProvider theme={Theme}>
     <Nav className="navbar navbar-expand-lg">
-      <StyledNavLink to="/users">
+      <StyledNavLink to="/">
         <h3>Team app</h3>
       </StyledNavLink>
     </Nav>
