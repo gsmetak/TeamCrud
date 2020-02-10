@@ -22,9 +22,9 @@ const App = () => (
       <ErrorBoundary>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/users" />} />
-          <Route exact path="/users/create" component={Add} />
-          <Route path="/users/:id" component={Edit} />
           <Route exact path="/users" component={List} />
+          <Route path="/users/create" component={Add} />
+          <Route path="/users/:id" component={Edit} />
           <Route path="/error" component={ErrorPage} />
           <Redirect to="/error" />
         </Switch>
