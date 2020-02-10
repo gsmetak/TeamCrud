@@ -6,6 +6,7 @@ import send from '../../shared/helpers/api'
 
 const Add = (props) => {
   const [, setLoading] = useGlobal('loading')
+  const [, setUserList] = useGlobal('userList')
 
   const addUser = (user) => {
     setLoading(true)
@@ -14,8 +15,9 @@ const Add = (props) => {
       url: '/users',
       data: user,
     })
-      .then(() => {
+      .then((response) => {
         setLoading(false)
+        setUserList(response.data.data)
         props.history.replace('/')
       })
       .catch((error) => {
