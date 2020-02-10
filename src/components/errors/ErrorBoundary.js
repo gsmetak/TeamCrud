@@ -5,13 +5,12 @@ import ErrorPage from './ErrorPage'
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { error: null, errorInfo: null, hasError: false }
+    this.state = { error: null, hasError: false }
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error) {
     this.setState({
       error,
-      errorInfo,
       hasError: true,
     })
   }
@@ -23,7 +22,6 @@ class ErrorBoundary extends React.Component {
           error={{
             message: this.state.error.message,
             detail: this.state.error.detail,
-            componentStack: this.state.errorInfo.componentStack,
           }}
         />
       )
