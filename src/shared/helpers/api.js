@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const agent = axios.create({
-  baseURL: 'https://cors-anywhere.herokuapp.com/https://api-users.fakiolinho.now.sh/api/',
+  baseURL: 'BASE_API_URL',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
